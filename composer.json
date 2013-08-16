@@ -1,0 +1,31 @@
+{
+    "name": "zburnham/zfruler",
+    "description": "Port of Ruler rules engine to a ZF2 module",
+    "type": "library",
+    "minimum-stability": "dev",
+    "keywords": [
+        "zf2",
+        "ruler"
+    ],
+    "homepage": "http://github.com/zburnham/ZFRuler",
+    "authors": [
+        {
+            "name": "Zachary Burnham",
+            "email": "zburnham@gmail.com",
+            "homepage": ""
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "zendframework/zendframework": "2.*",
+        "pimple/pimple": "1.0.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "ZFRuler": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    }
+}
