@@ -1,5 +1,5 @@
 {
-    "name": "ZFRuler",
+    "name": "zburnham/zfruler",
     "description": "Port of Ruler rules engine to a ZF2 module",
     "type": "library",
     "minimum-stability": "dev",
