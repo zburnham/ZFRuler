@@ -4,6 +4,15 @@ namespace ZFRuler;
 
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 
+use Ruler\Context;
+use Ruler\Rule;
+use Ruler\RuleBuilder;
+use Ruler\RuleSet;
+use Ruler\Value;
+use Ruler\Variable;
+use Ruler\VariableProperty;
+
+
 class Module implements AutoloaderProviderInterface
 {
     public function getAutoloaderConfig()
@@ -33,26 +42,26 @@ class Module implements AutoloaderProviderInterface
     {
         return array(
             'factories' => array(
-                'Ruler\Context' => function($sm) {
-                    return new Ruler\Context;
+                'Ruler\Context' => function() {
+                    return new Context;
                 },
-                'Ruler\Rule' => function($sm) {
-                    return new Ruler\Rule;
+                'Ruler\RuleFactory' => function() {
+                    return new Factory\RuleFactory();
                 },
-                'Ruler\RuleBuilder' => function($sm) {
-                    return new Ruler\RuleBuilder;
+                'Ruler\RuleBuilder' => function() {
+                    return new RuleBuilder;
                 },
-                'Ruler\RuleSet' => function($sm) {
-                    return new Ruler\RuleSet;
+                'Ruler\RuleSet' => function() {
+                    return new RuleSet;
                 },
-                'Ruler\Value' => function($sm) {
-                    return new Ruler\Value;
+                'Ruler\Value' => function() {
+                    return new Value;
                 },
-                'Ruler\Variable' => function($sm) {
-                    return new Ruler\Variable;
+                'Ruler\Variable' => function() {
+                    return new Variable;
                 },
-                'Ruler\VariableProperty' => function($sm) {
-                    return new Ruler\VariableProperty;
+                'Ruler\VariableProperty' => function() {
+                    return new VariableProperty;
                 }
             ),
         );
