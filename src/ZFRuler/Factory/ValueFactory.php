@@ -10,7 +10,7 @@ namespace ZFRuler\Factory;
 
 use Ruler\Value;
 
-class RuleFactory
+class ValueFactory
 {
     /**
      * Creates new Ruler Rule given a specific proposition.
