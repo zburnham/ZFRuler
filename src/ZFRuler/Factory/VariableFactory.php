@@ -8,7 +8,18 @@
 
 namespace ZFRuler\Factory;
 
+use Ruler\Variable;
+
 class VariableFactory
 {
-    //TODO
+    /**
+     * @param string $name
+     * @param mixed $value
+     * 
+     * @return Variable
+     */
+    public function create($name = null, $value = null)
+    {
+        //TODO
+    }
 }

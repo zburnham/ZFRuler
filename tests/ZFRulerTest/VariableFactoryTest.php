@@ -56,25 +56,16 @@ class VariableFactoryTest extends \PHPUnit_Framework_TestCase
      */
     public function testReturnsVariable()
     {
-        $this->assertInstanceOf('\Ruler\Variable', $this->getObject()->create());
+        $this->assertInstanceOf('\Ruler\Variable', $this->getObject()->create('test',0));
     }
     
-    /**
-     * Can we set the name of the variable?
-     * 
-     * @return bool
-     */
-    public function testSetName()
+    public function testCreateSetsArgumentsProperly()
     {
-        $name = 'TestVariable';
-        $v = $this->getObject()->create($name);
+        $name = 'Foo';
+        $value = 1;
+        $v = $this->getObject()->create($name, $value);
+        
         $this->assertSame($name, $v->getName());
-    }
-    
-    public function testSetValue()
-    {
-        $value = 0;
-        $v = $this->getObject()->create(NULL, $value);
         $this->assertSame($value, $v->getValue());
     }
     

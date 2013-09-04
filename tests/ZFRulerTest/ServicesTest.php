@@ -43,6 +43,7 @@ class ServicesTest extends \PHPUnit_Framework_TestCase
             //array('Ruler\Value'),
             array('Ruler\Variable'),
             //array('Ruler\VariableProperty'),
+            array('Ruler\Operator\LogicalNot'),
         );
     }
     
