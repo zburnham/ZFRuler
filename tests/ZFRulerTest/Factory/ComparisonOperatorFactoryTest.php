@@ -15,6 +15,9 @@ use ZFRuler\Factory\ComparisonOperatorFactory;
 
 class ComparisonOperatorFactoryTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * @var \ZFRuler\Factory\ComparisonOperatorFactory
+     */
     protected $object;
     
     protected $sm;
@@ -27,14 +30,23 @@ class ComparisonOperatorFactoryTest extends \PHPUnit_Framework_TestCase
         $this->setSm(Bootstrap::getServiceManager());
     }
     
+    /**
+     * @group factories
+     */
     public function testSanity()
     {
         $this->assertTrue(TRUE);
     }
     
+    /**
+     * @group factories
+     */
     public function testReturnsComparisonOperator()
     {
-        $this->assertInstanceOf('\Ruler\ComparisonOperator', $this->getObject->create(1,0));
+        $vf = $this->getSm()->get('Ruler\VariableFactory');
+        $left = $vf->create('Foo', 0);
+        $right = $vf->create('Bar', 1);
+        $this->assertInstanceOf('\Ruler\Operator\ComparisonOperator', $this->getObject()->create('Contains', $left, $right)); // shouldn't matter what operator we get
     }
     
     /**
@@ -54,12 +66,19 @@ class ComparisonOperatorFactoryTest extends \PHPUnit_Framework_TestCase
         $this->object = $object;
         return $this;
     }
-    
+
+    /**
+     * @return \Zend\ServiceManager\ServiceManager
+     */
     public function getSm()
     {
         return $this->sm;
     }
 
+    /**
+     * @param \Zend\ServiceManager\ServiceManager $sm
+     * @return \ZFRulerTest\ComparisonOperatorFactoryTest
+     */
     public function setSm(ServiceManager $sm)
     {
         $this->sm = $sm;

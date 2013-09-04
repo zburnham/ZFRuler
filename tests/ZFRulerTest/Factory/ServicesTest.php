@@ -28,6 +28,7 @@ class ServicesTest extends \PHPUnit_Framework_TestCase
     }
     /**
      * Sanity check.
+     * @group services
      */
     public function testSanity()
     {
@@ -41,18 +42,27 @@ class ServicesTest extends \PHPUnit_Framework_TestCase
             array('Ruler\RuleBuilder'),
             array('Ruler\RuleSet'),
             //array('Ruler\Value'),
-            array('Ruler\Variable'),
+            //array('Ruler\Variable'),
             //array('Ruler\VariableProperty'),
-            array('Ruler\Operator\LogicalNot'),
         );
     }
     
     /**
      * @dataProvider classes
+     * @group services
      */
     public function testSMGets($class)
     {
         $this->assertInstanceOf($class, $this->sm->get($class));
+    }
+    
+    /**
+     * @group services
+     */
+    public function testOperatorFactory()
+    {
+        $this->markTestIncomplete();
+        //TODO
     }
     
     public function tearDown()

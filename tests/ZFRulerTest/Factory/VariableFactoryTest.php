@@ -33,7 +33,7 @@ class VariableFactoryTest extends \PHPUnit_Framework_TestCase
         parent::setUp();
         
         $this->setSm(Bootstrap::getServiceManager());
-        $this->setObject($this->getSm()->get('ZFRuler\VariableFactory')); // TODO
+        $this->setObject($this->getSm()->get('Ruler\VariableFactory')); // TODO
     }
     
     /**
@@ -53,12 +53,16 @@ class VariableFactoryTest extends \PHPUnit_Framework_TestCase
      * Do we get a Variable back from the factory?
      * 
      * @return bool
+     * @group factories
      */
     public function testReturnsVariable()
     {
         $this->assertInstanceOf('\Ruler\Variable', $this->getObject()->create('test',0));
     }
     
+    /**
+     * @group factories
+     */
     public function testCreateSetsArgumentsProperly()
     {
         $name = 'Foo';

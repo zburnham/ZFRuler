@@ -13,14 +13,22 @@ use ZFRuler\Factory\RuleFactory;
 
 class RuleFactoryTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * @var \ZFRuler\Factory\RuleFactory;
+     */
     protected $object;
 
+    /**
+     * Test set-up.
+     */
     public function setUp()
     {
         parent::setUp();
         $this->setObject(new RuleFactory());
     }
-    
+    /**
+     * @group factories
+     */
     public function testRuleFactoryReturnsRule()
     {
         $p = new TrueProposition;
@@ -28,7 +36,7 @@ class RuleFactoryTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return RuleFactory
+     * @return \ZFRuler\Factory\RuleFactory
      */
     public function getObject()
     {
