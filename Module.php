@@ -75,7 +75,7 @@ class Module implements AutoloaderProviderInterface
                     return new VariableProperty;
                 },
                 'Ruler\Operator\ComparisonOperatorFactory' => function () {
-                    return new Factory\ComparisonOperatorFactory; // TODO
+                    return new Factory\ComparisonOperatorFactory;
                 },
 //                'Ruler\Operator\Contains' => function () {
 //                    return new Operator\Contains;

@@ -11,7 +11,10 @@
 namespace ZFRulerTest;
 
 use Zend\ServiceManager\ServiceManager;
+
 use ZFRuler\Factory\ComparisonOperatorFactory;
+
+use ZFRulerTest\Bootstrap;
 
 class ComparisonOperatorFactoryTest extends \PHPUnit_Framework_TestCase
 {

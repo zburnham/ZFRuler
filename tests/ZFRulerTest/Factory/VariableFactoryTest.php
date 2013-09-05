@@ -6,13 +6,15 @@
  * @author Zachary Burnham zburnham@gmail.com
  */
 
-namespace ZFRulerTest;
+namespace ZFRulerTest\Factory;
 
 use Ruler\Variable;
 
 use Zend\ServiceManager\ServiceManager;
 
 use ZFRuler\Factory\VariableFactory;
+
+use ZFRulerTest\Bootstrap;
 
 class VariableFactoryTest extends \PHPUnit_Framework_TestCase
 {

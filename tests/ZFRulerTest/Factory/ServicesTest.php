@@ -12,6 +12,8 @@ use Ruler\Test\Fixtures\TrueProposition;
 
 use Zend\ServiceManager\ServiceManager;
 
+use ZFRulerTest\Bootstrap;
+
 class ServicesTest extends \PHPUnit_Framework_TestCase
 {
     /**

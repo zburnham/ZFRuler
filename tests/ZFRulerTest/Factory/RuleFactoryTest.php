@@ -9,7 +9,10 @@
 namespace ZFRulerTest;
 
 use Ruler\Test\Fixtures\TrueProposition;
+
 use ZFRuler\Factory\RuleFactory;
+
+use ZFRulerTest\Bootstrap;
 
 class RuleFactoryTest extends \PHPUnit_Framework_TestCase
 {
