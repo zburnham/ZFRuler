@@ -30,9 +30,6 @@ class ComparisonOperatorFactoryTest extends \PHPUnit_Framework_TestCase
         $this->setSm(Bootstrap::getServiceManager());
     }
     
-    /**
-     * @group factories
-     */
     public function testSanity()
     {
         $this->assertTrue(TRUE);
@@ -46,7 +43,9 @@ class ComparisonOperatorFactoryTest extends \PHPUnit_Framework_TestCase
         $vf = $this->getSm()->get('Ruler\VariableFactory');
         $left = $vf->create('Foo', 0);
         $right = $vf->create('Bar', 1);
-        $this->assertInstanceOf('\Ruler\Operator\ComparisonOperator', $this->getObject()->create('Contains', $left, $right)); // shouldn't matter what operator we get
+        $this->assertInstanceOf('\Ruler\Operator\ComparisonOperator', 
+                $this->getObject()
+                ->create('Contains', $left, $right)); // shouldn't matter what operator we get
     }
     
     /**

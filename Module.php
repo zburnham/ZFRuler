@@ -32,9 +32,6 @@ class Module implements AutoloaderProviderInterface
     public function getAutoloaderConfig()
     {
         return array(
-//            'Zend\Loader\ClassMapAutoloader' => array(
-//                __DIR__ . '/autoload_classmap.php',
-//            ),
             'Zend\Loader\StandardAutoloader' => array(
                 'namespaces' => array(
                     __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
@@ -71,57 +68,51 @@ class Module implements AutoloaderProviderInterface
                 'Ruler\Value' => function() {
                     return new Value;
                 },
-                'Ruler\Variable' => function() {
-                    return new Variable;
+                'Ruler\VariableFactory' => function() {
+                    return new Factory\VariableFactory;
                 },
                 'Ruler\VariableProperty' => function() {
                     return new VariableProperty;
                 },
-                'Ruler\Contains' => function () {
-                    return new Contains;
-                },
-                'Ruler\DoesNotContain' => function () {
-                    return new DoesNotContain;
-                },
                 'Ruler\Operator\ComparisonOperatorFactory' => function () {
-                    return new Factory\ComparisonOperatorFactory;
+                    return new Factory\ComparisonOperatorFactory; // TODO
                 },
-                'Ruler\Operator\Contains' => function () {
-                    return new Operator\Contains;
-                },
-                'Ruler\Operator\DoesNotContain' => function () {
-                    return new Operator\DoesNotContain;
-                },
-                'Ruler\Operator\EqualTo' => function () {
-                    return new Operator\EqualTo;
-                },
-                'Ruler\Operator\GreaterThan' => function () {
-                    return new Operator\GreaterThan;
-                },
-                'Ruler\Operator\LessThan' => function () {
-                    return new Operator\LessThan;
-                },
-                'Ruler\Operator\LessThanOrEqualTo' => function () {
-                    return new Operator\LessThanOrEqualTo;
-                },
-                'Ruler\Operator\LogicalAnd' => function () {
-                    return new Operator\LogicalAnd;
-                },
-                'Ruler\Operator\LogicalNot' => function () {
-                    return new Operator\LogicalNot;
-                },
-                'Ruler\Operator\LogicalOperator' => function () {
-                    //TODO we need a factory here
-                },
-                'Ruler\Operator\LogicalOr' => function() {
-                    return new Operator\LogicalOr;
-                },
-                'Ruler\Operator\LogicalXor' => function () {
-                    return new Operator\LogicalXor;
-                },
-                'Ruler\Operator\NotEqualTo' => function () {
-                    return new Operator\NotEqualTo;
-                }
+//                'Ruler\Operator\Contains' => function () {
+//                    return new Operator\Contains;
+//                },
+//                'Ruler\Operator\DoesNotContain' => function () {
+//                    return new Operator\DoesNotContain;
+//                },
+//                'Ruler\Operator\EqualTo' => function () {
+//                    return new Operator\EqualTo;
+//                },
+//                'Ruler\Operator\GreaterThan' => function () {
+//                    return new Operator\GreaterThan;
+//                },
+//                'Ruler\Operator\LessThan' => function () {
+//                    return new Operator\LessThan;
+//                },
+//                'Ruler\Operator\LessThanOrEqualTo' => function () {
+//                    return new Operator\LessThanOrEqualTo;
+//                },
+//                'Ruler\Operator\LogicalAnd' => function () {
+//                    return new Operator\LogicalAnd;
+//                },
+//                'Ruler\Operator\LogicalNot' => function () {
+//                    return new Operator\LogicalNot;
+//                },
+//                'Ruler\Operator\LogicalOperator' => function () {
+//                    //TODO we need a factory here
+//                },
+//                'Ruler\Operator\LogicalOr' => function() {
+//                    return new Operator\LogicalOr;
+//                },
+//                'Ruler\Operator\LogicalXor' => function () {
+//                    return new Operator\LogicalXor;
+//                },
+//                'Ruler\Operator\NotEqualTo' => function () {
+//                    return new Operator\NotEqualTo;
+//                }
             ),
         );
     }

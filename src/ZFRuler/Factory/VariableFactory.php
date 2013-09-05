@@ -20,6 +20,6 @@ class VariableFactory
      */
     public function create($name = null, $value = null)
     {
-        //TODO
+        return new Variable($name, $value);
     }
 }
