@@ -56,8 +56,11 @@ class Module implements AutoloaderProviderInterface
                 'Ruler\Context' => function() {
                     return new Context;
                 },
+                'Ruler\ContextFactory' => function () {
+                    return new Factory\ContextFactory;
+                },
                 'Ruler\RuleFactory' => function() {
-                    return new Factory\RuleFactory();
+                    return new Factory\RuleFactory;
                 },
                 'Ruler\RuleBuilder' => function() {
                     return new RuleBuilder;
