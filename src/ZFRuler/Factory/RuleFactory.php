@@ -14,7 +14,7 @@ use Ruler\Proposition;
 class RuleFactory
 {
     /**
-     * Creates new Ruler Rule given a specific proposition.
+     * Creates new \Ruler\Rule object given a specific proposition.
      * 
      * @param \Ruler\Proposition $p
      * @return \Ruler\Rule

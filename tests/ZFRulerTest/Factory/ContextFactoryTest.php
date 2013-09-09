@@ -46,8 +46,10 @@ class ContextFactoryTest extends \PHPUnit_Framework_TestCase
      public function testWeCanSetParametersInConstructor()
      {
          $array = array('a' => 'foo', 'b' => 'bar');
-         $f = $this->getObject();
-         $this->assertSame($f->create($array)->keys(), array('a', 'b'));
+         $context = $this->getObject()->create($array);
+         $this->assertSame($context->keys(), array('a', 'b'));
+         $this->assertSame($context->offsetGet('a'), 'foo');
+         $this->assertSame($context->offsetGet('b'), 'bar');
      }
     
     /**
