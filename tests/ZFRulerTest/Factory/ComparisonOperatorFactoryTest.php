@@ -23,6 +23,10 @@ class ComparisonOperatorFactoryTest extends \PHPUnit_Framework_TestCase
      */
     protected $object;
     
+    /**
+     *
+     * @var \Zend\ServiceManager\ServiceManager
+     */
     protected $sm;
 
     public function setUp()
@@ -36,9 +40,13 @@ class ComparisonOperatorFactoryTest extends \PHPUnit_Framework_TestCase
     public function testSanity()
     {
         $this->assertTrue(TRUE);
+        $this->assertInstanceOf('\ZFRuler\Factory\ComparisonOperatorFactory', 
+                $this->getObject());
     }
     
     /**
+     * Do we get back a \Ruler\Operator\ComparisonOperator?
+     * 
      * @group factories
      */
     public function testReturnsComparisonOperator()

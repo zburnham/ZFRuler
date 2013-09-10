@@ -36,35 +36,52 @@ class ServicesTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertTrue(TRUE);
     }
-
-    public function classes()
+    
+    public function services()
     {
         return array(
-            array('Ruler\Context'),
-            array('Ruler\RuleBuilder'),
-            array('Ruler\RuleSet'),
-            //array('Ruler\Value'),
-            //array('Ruler\Variable'),
-            //array('Ruler\VariableProperty'),
+            array(
+                'ruler-comparisonoperator-factory', 
+                '\ZFRuler\Factory\ComparisonOperatorFactory',
+                ),
+            array(
+                'ruler-context-factory',
+                '\ZFRuler\Factory\ContextFactory',
+                ),
+            array(
+                'ruler-rulebuilder-factory',
+                '\ZFRuler\Factory\RuleBuilderFactory',
+                ),
+            array(
+                'ruler-rule-factory',
+                '\ZFRuler\Factory\RuleFactory',
+                ),
+            array(
+                'ruler-ruleset-factory',
+                '\ZFRuler\Factory\RuleSetFactory',
+            ),
+            array(
+                'ruler-value-factory',
+                '\ZFRuler\Factory\ValueFactory',
+            ),
+            array(
+                'ruler-variable-factory',
+                '\ZFRuler\Factory\VariableFactory',
+            ),
+            array(
+                'ruler-variableproperty-factory',
+                '\ZFRuler\Factory\VariablePropertyFactory',
+            ),
         );
     }
     
     /**
-     * @dataProvider classes
+     * @dataProvider services
      * @group services
      */
-    public function testSMGets($class)
+    public function testSMGets($key, $class)
     {
-        $this->assertInstanceOf($class, $this->sm->get($class));
-    }
-    
-    /**
-     * @group services
-     */
-    public function testOperatorFactory()
-    {
-        $this->markTestIncomplete();
-        //TODO
+        $this->assertInstanceOf($class, $this->sm->get($key));
     }
     
     public function tearDown()
