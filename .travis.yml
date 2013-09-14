@@ -4,6 +4,6 @@ php
     -5.4
     -5.5
 
-before-script:
+before_script:
     - composer install
 
