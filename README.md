@@ -1,6 +1,8 @@
 ZFRuler
 =======
 
+[![Build Status](https://travis-ci.org/zburnham/ZFRuler.png?branch=master)](https://travis-ci.org/zburnham/ZFRuler)
+
 Port of Ruler rules engine to a ZF2 module.
 
 Essentially a wrapper around Justin Hileman's Ruler rules engine (https://github.com/bobthecow/Ruler).
