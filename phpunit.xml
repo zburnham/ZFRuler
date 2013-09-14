@@ -1,8 +1,8 @@
-<phpunit bootstrap="./Bootstrap.php" 
+<phpunit bootstrap="./tests/Bootstrap.php" 
 colors="true">
     <testsuites>
         <testsuite name="ZFRuler Test Suite">
-            <directory>./ZFRulerTest</directory>
+            <directory>./tests/ZFRulerTest</directory>
         </testsuite>
     </testsuites>
     <filter>
